@@ -1,7 +1,5 @@
 # vue-xg
 
-https://shexiaoguang.github.io/scscmg/dist/index.html
-
 ## Project setup
 ```
 npm install

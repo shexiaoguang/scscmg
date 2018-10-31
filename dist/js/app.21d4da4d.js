@@ -755,7 +755,7 @@
                         if ("" == this.username || "" == this.password) this.warnuser = "请输入正确的邮箱或手机号", this.warnpwd = "请输入6-16位密码，区分大小写，不能使用空格!";
                         else {
                             var a = this.Regexp();
-                            null != a && this.$http.post("http://127.0.0.1:3000/user/login", a).then(function (a) {
+                            null != a && this.$http.post("http://176.140.6.197:3000/user/login", a).then(function (a) {
                                 console.log(a), -1 == a.body.msg ? t.warnpwd = "输入密码有误" : 1 == a.body.msg && (s.checked ? (v("uname", a.body.result[0].uname, 6048e5), v("avatar", a.body.result[0].avatar, 6048e5)) : (v("uname", a.body.result[0].uname, 36e5), v("avatar", a.body.result[0].avatar, 36e5)), setTimeout(function () {
                                     s.$router.go(0)
                                 }, 2e3))
@@ -2137,14 +2137,14 @@
                     }),
                     today: function () {
                         var t = this;
-                        this.$http.get("http://127.0.0.1:3000/carousel/today").then(function (s) {
+                        this.$http.get("http://176.140.6.197:3000/carousel/today").then(function (s) {
                             for (var a = s.body.msg, i = [], e = {}, l = 0, r = 0; r < a.length; r++) i.push(a[r]), 4 != i.length || (e[l] = i, i = [], l++);
                             t.Today = e
                         })
                     },
                     dev: function () {
                         var t = this;
-                        this.$http.get("http://127.0.0.1:3000/carousel/dev").then(function (s) {
+                        this.$http.get("http://176.140.6.197:3000/carousel/dev").then(function (s) {
                             var a = s.body.msg;
                             t.Dev = a
                         })
@@ -2509,7 +2509,7 @@
                 methods: {
                     women: function () {
                         var t = this;
-                        this.$http.get("http://127.0.0.1:3000/carousel/menu").then(function (s) {
+                        this.$http.get("http://176.140.6.197:3000/carousel/menu").then(function (s) {
                             setTimeout(function () {
                                 t.Women = t.group(s.body.women), t.Women_dev = s.body.women_dev
                             }, 300)
@@ -2557,7 +2557,7 @@
                     menu_lis: function () {
                         var t = this,
                             s = this;
-                        this.$http.get("http://127.0.0.1:3000/list/").then(function (a) {
+                        this.$http.get("http://176.140.6.197:3000/list/").then(function (a) {
                             for (var i = t.classify(a.body.carousel), e = t.groupfive(a.body.recommend), l = [], r = 0; r < i.length; r++) l.push(t.groupsix(i[r]));
                             s.Rec.push(e), s.Lists = l, s.Dev = a.body.dev
                         })
@@ -2654,7 +2654,7 @@
                 methods: {
                     dt: function () {
                         var t = this;
-                        this.$http.get("http://127.0.0.1:3000/like").then(function (s) {
+                        this.$http.get("http://176.140.6.197:3000/like").then(function (s) {
                             t.Like = s.body
                         })
                     }
@@ -2700,7 +2700,7 @@
                     },
                     carousel: function () {
                         var t = this;
-                        this.$http.get("http://127.0.0.1:3000/carousel").then(function (s) {
+                        this.$http.get("http://176.140.6.197:3000/carousel").then(function (s) {
                             t.Banners = s.body.msg
                         })
                     },
@@ -3125,7 +3125,7 @@
                         var t = this;
                         $.ajax({
                             type: "get",
-                            url: "http://127.0.0.1:3000/group/today",
+                            url: "http://176.140.6.197:3000/group/today",
                             dataType: "JSON",
                             success: function (s) {
                                 for (var a = [], i = [], e = 0; e < s.result.length; e++) a.push(s.result[e]), 4 == a.length && (i.push(a), a = []);
@@ -3137,7 +3137,7 @@
                         var t = this;
                         $.ajax({
                             type: "get",
-                            url: "http://127.0.0.1:3000/group/tastegood",
+                            url: "http://176.140.6.197:3000/group/tastegood",
                             dataType: "JSON",
                             success: function (s) {
                                 if (1 == s.code) {
@@ -3161,7 +3161,7 @@
                     },
                     handpicks: function () {
                         var t = this;
-                        this.$http.get("http://127.0.0.1:3000/group/handpick").then(function (s) {
+                        this.$http.get("http://176.140.6.197:3000/group/handpick").then(function (s) {
                             t.Handpicks = s.body.choiceness.reverse(), t.Handall = s.body
                         })
                     },
@@ -4846,7 +4846,7 @@
             render: function (t) {
                 return t(W)
             }
-        }).$mount("#app"), i["a"].http.options.root = "http://127.0.0.1:3000/", i["a"].http.options.emulateJSON = !0
+        }).$mount("#app"), i["a"].http.options.root = "http://176.140.6.197:3000/", i["a"].http.options.emulateJSON = !0
     },
     "5a02": function (t, s) {
         t.exports = "data:image/png;base64,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"
