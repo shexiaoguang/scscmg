@@ -114,7 +114,7 @@ button.rl-close[data-v-7cd20ffb]:hover {
     border-radius: 6px;
     font-size: 14px;
     outline: none;
-    color: #66666;
+    color: #666666;
     -webkit-box-sizing: border-box;
     box-sizing: border-box
 }
@@ -761,7 +761,7 @@ a.rlf-forget[data-v-7cd20ffb]:hover {
 .mgj_rightbar .mgj-back2top a {
     border-top: 1px solid hsla(0, 0%, 86.7%, .6);
     border-top: 1px solid #ddd\9;
-    padding-top: 4px
+    padding-top:4px;
 }
 
 .mgj_rightbar #detail-qrcode {
